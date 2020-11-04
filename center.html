@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="resources/css/layer.css">
+    <script src="resources/js/jquery-1.11.0.min.js"></script>
+
+    <script>
+        window.onbeforeunload = function () { $('body').append("<div id='loading'></div>"); }
+        $(window).load(function () {
+            $('#loading').hide();
+        });
+    </script>
+</head>
+
+<body>
+    <div class="oasiscenter_layer oasis_layer">
+        <div class="oasiscenter_inner">
+            <div id="oasiscenter_left">
+                <div class="group1">
+                    <strong>인증센터</strong>
+                </div>
+                <ul id="oasiscenter_lnb">
+                    <li><a href="#" class="current">계정등록</a></li>
+                    <li><a href="#">OTP 재등록</a></li>
+                    <li><a href="#">PC-OTP 발급</a></li>
+                    <li><a href="#">비밀번호 찾기</a></li>
+                    <li><a href="#">비밀번호 변경</a></li>
+                    <li><a href="#">OTP 등록 확인</a></li>
+                    <li><a href="#">로그인 안내</a></li>
+                </ul>
+            </div>
+            <div id="oasiscenter_section">
+                <div class="oasiscenter_title">
+                    OASIS BLUE<span></span>계정등록
+                </div>
+                <div class="oasiscenter_path">
+                    <div class="part pass"><i class="path_lock"></i>초기비밀번호확인</div>
+                    <div class="part current"><i class="path_setting"></i>비밀번호 설정</div>
+                    <div class="part"><i class="path_check"></i>앱 등록</div>
+                </div>
+                <div class="oasiscenter_path two">
+                    <div class="part current"><i class="path_lock"></i>OTP확인</div>
+                    <div class="part"><i class="path_setting"></i>비밀번호 재설정</div>
+                </div>
+                <div class="oasiscenter_contents">
+                    <!-- PC-OTP발급 -->
+                    <form action="" id="form_pc_otp" class="activeForm">
+                        <div class="group group1">
+                            <div class="activeForm_group">
+                                <div class="activeForm_title activeForm_id"><label for="member_id">직번</label></div>
+                                <div class="activeForm_area">
+                                    <div class="activeForm_box">
+                                        <div class="activeForm_unit">
+                                            <input type="text" uid="member_id" class="activeForm_text"
+                                                placeholder="직번 5자리 입력" title="직번" autofocus />
+                                        </div>
+                                    </div>
+                                    <div class="activeForm_guide">
+                                        <span class="completion">직번 5자리를 입력해주세요.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="activeForm_group">
+                                <div class="activeForm_title activeForm_pw"><label for="member_pw">비밀번호</label></div>
+                                <div class="activeForm_area">
+                                    <div class="activeForm_box">
+                                        <div class="activeForm_unit">
+                                            <input type="text" uid="member_pw" class="activeForm_text"
+                                                placeholder="비밀번호 입력" title="비밀번호">
+                                        </div>
+                                    </div>
+                                    <div class="activeForm_guide">
+                                        <span class="warning">비밀번호에 연속된 문자 또는 숫자를 입력할 수 없습니다.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="activeForm_btnwrap">
+                                <button class="activeForm_playbtn">PC-OTP 실행</button>
+                                <p class="p_star"><i>&#42;</i> PC-OTP 사용자만 이용가능합니다.</p>
+                            </div>
+                        </div>
+                        <div class="group group2">
+                            <div class="path_circle">
+                                <span class="member_pin_time">10:00</span>
+                                <span class="circle_group"></span>
+                            </div>
+                            <input class="member_pin" type="text" value="1234 5678" disabled="">
+                        </div>
+                        <div class="group group3">
+                            <div class="activeForm_group">
+                                <div class="activeForm_title activeForm_otp"><label for="member_otp">OTP</label></div>
+                                <div class="activeForm_area">
+                                    <div class="activeForm_box">
+                                        <div class="activeForm_unit activeForm_partner">
+                                            <input type="password" uid="member_otp" class="error activeForm_text"
+                                                placeholder="OTP 입력" title="OTP">
+                                            <input type="submit" value="로그인" class="activeForm_btn">
+                                        </div>
+                                    </div>
+                                    <div class="activeForm_guide">
+                                        <span class="error">OTP번호가 올바르지 않습니다.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- OTP 재등록 -->
+                    <form action="" id="form_re_register_apps" class="activeForm">
+                        <div class="activeForm_group">
+                            <div class="activeForm_title activeForm_id"><label for="member_id">직번</label></div>
+                            <div class="activeForm_area">
+                                <div class="activeForm_box">
+                                    <div class="activeForm_unit">
+                                        <input type="text" uid="member_id" class="activeForm_text"
+                                            placeholder="직번 5자리 입력" title="직번" autofocus />
+                                    </div>
+                                </div>
+                                <div class="activeForm_guide">
+                                    <span class="warning">직번 5자리를 입력해주세요.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="activeForm_group">
+                            <div class="activeForm_title activeForm_pw"><label for="member_pw">비밀번호</label></div>
+                            <div class="activeForm_area">
+                                <div class="activeForm_box">
+                                    <div class="activeForm_unit activeForm_partner">
+                                        <input type="password" uid="member_pw" class="activeForm_text"
+                                            placeholder="비밀번호 입력" title="비밀번호">
+                                        <input type="submit" value="확인" class="activeForm_btn">
+                                    </div>
+                                </div>
+                                <div class="activeForm_guide">
+                                    <span class="warning">비밀번호에 연속된 문자 또는 숫자를입력할 수 없습니다.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="qrcode_pin_viewer">
+                            <div class="qrcode">
+                                <img src='resources/images/layer/qrcode_sample.png' rel='nofollow' alt='qrcode'>
+                            </div>
+                            <div class="group2">
+                                <div class="part">
+                                    <strong>PIN</strong>
+                                    <input class="member_pin" type="text" value="1234 5678" disabled>
+                                    <span class="member_pin_time">(10:00)</span>
+                                    <p class="p_star">
+                                        <i>&#42;</i> 앱으로 QR코드 스캔 후 PIN번호를 입력하시면 등록이 완료됩니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- 계정등록의 앱등록 -->
+                    <form action="" id="form_apps_registration">
+                        <ul>
+                            <li>
+                                <strong>직번</strong>
+                                <input type="text" value="01234" disabled>
+                            </li>
+                            <li>
+                                <strong>사원이름</strong>
+                                <input type="text" value="신용이" disabled>
+                            </li>
+                        </ul>
+                        <div class="qrcode_pin_viewer">
+                            <div class="qrcode">
+                                <img src='resources/images/layer/qrcode_sample.png' rel='nofollow' alt='qrcode'>
+                            </div>
+                            <div class="group2">
+                                <strong>PIN</strong>
+                                <input class="member_pin" type="text" value="1234 5678" disabled>
+                                <span class="member_pin_time">(10:00)</span>
+                                <p class="p_star"><i>&#42;</i> 앱으로 QR코드 스캔 후 PIN번호를 입력하시면 등록이 완료됩니다.</p>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- 비밀번호 찾기 -->
+                    <form action="" id="form_find_pw" class="activeForm">
+                        <div class="activeForm_group">
+                            <div class="activeForm_title activeForm_id"><label for="member_id">직번</label></div>
+                            <div class="activeForm_area">
+                                <div class="activeForm_box">
+                                    <div class="activeForm_unit">
+                                        <input type="text" uid="member_id" class="activeForm_text"
+                                            placeholder="직번 5자리 입력" title="직번" autofocus />
+                                    </div>
+                                </div>
+                                <div class="activeForm_guide">
+                                    <span class="warning">직번 5자리를 입력해주세요.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="activeForm_group">
+                            <div class="activeForm_title activeForm_otp"><label for="member_otp">OTP</label></div>
+                            <div class="activeForm_area">
+                                <div class="activeForm_box">
+                                    <div class="activeForm_unit">
+                                        <input type="text" uid="member_otp" class="activeForm_text" placeholder="OTP 입력"
+                                            title="OTP">
+                                    </div>
+                                </div>
+                                <div class="activeForm_guide">
+                                    <span class="error">OTP번호가 올바르지 않습니다.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="activeForm_btnwrap">
+                            <input type="submit" class="activeForm_confirm" value="다음" />
+                            <button class="activeForm_cancle">닫기</button>
+                        </div>
+                    </form>
+
+                    <!-- 계정등록 -->
+                    <form action="" id="form_join" class="activeForm">
+                        <div class="activeForm_group">
+                            <div class="activeForm_title activeForm_id"><label for="member_id">직번</label></div>
+                            <div class="activeForm_area">
+                                <div class="activeForm_box">
+                                    <div class="activeForm_unit">
+                                        <input type="text" uid="member_id" class="activeForm_text"
+                                            placeholder="직번 5자리 입력" title="직번" autofocus />
+                                    </div>
+                                </div>
+                                <div class="activeForm_guide">
+                                    <span class="warning">직번 5자리를 입력해주세요.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="activeForm_group">
+                            <div class="activeForm_title activeForm_pw"><label for="member_pw">비밀번호</label></div>
+                            <div class="activeForm_area">
+                                <div class="activeForm_box">
+                                    <div class="activeForm_unit">
+                                        <input type="password" uid="member_pw" class="activeForm_text"
+                                            placeholder="비밀번호 입력" title="비밀번호">
+                                    </div>
+                                </div>
+                                <div class="activeForm_guide">
+                                    <span class="error">비밀번호가 올바르지 않습니다.</span>
+                                </div>
+                                <div class="activeForm_info">
+                                    <p><i>&#42;</i> 초기비밀번호: oasis직번5자리</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="activeForm_btnwrap">
+                            <input type="submit" class="activeForm_confirm" value="다음" />
+                            <button class="activeForm_cancle">닫기</button>
+                        </div>
+                    </form>
+
+                    <!-- 계정등록의 비밀번호설정 -->
+                    <form action="" id="form_change_pw" class="activeForm">
+                        <div class="activeForm_group">
+                            <div class="activeForm_title activeForm_id"><label for="member_id">직번</label></div>
+                            <div class="activeForm_area">
+                                <div class="activeForm_box">
+                                    <div class="activeForm_unit">
+                                        <input type="text" uid="member_id" class="activeForm_text" value="01234"
+                                            title="직번" disabled autofocus>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="activeForm_group">
+                            <div class="activeForm_title activeForm_pw"><label for="member_pw">비밀번호</label></div>
+                            <div class="activeForm_area">
+                                <div class="activeForm_box">
+                                    <div class="activeForm_unit">
+                                        <input type="password" uid="member_pw" class="activeForm_text"
+                                            placeholder="비밀번호 입력" title="비밀번호" autofocus>
+                                    </div>
+                                </div>
+                                <div class="activeForm_guide">
+                                    <span class="warning">비밀번호에 연속된 문자 또는 숫자를 입력할 수 없습니다.</span>
+                                    <span class="warning">비밀번호에 아이디는 입력할 수 없습니다.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="activeForm_group">
+                            <div class="activeForm_title activeForm_pw"><label for="member_pw">비밀번호 확인</label></div>
+                            <div class="activeForm_area">
+                                <div class="activeForm_box">
+                                    <div class="activeForm_unit">
+                                        <input type="password" uid="member_pw" class="activeForm_text"
+                                            placeholder="비밀번호 입력" title="비밀번호 확인">
+                                    </div>
+                                </div>
+                                <div class="activeForm_guide">
+                                    <span class="error">일치하지 않습니다.</span>
+                                </div>
+                                <div class="activeForm_info">
+                                    <p><i>&#42;</i> 영문(대/소문자 구분), 숫자, 특수문자를 조합하여 9~20자리 입력</p>
+                                    <p><i>&#42;</i> 연속된 문자 또는 숫자 입력 불가(ex 123, abc)</p>
+                                    <p><i>&#42;</i> 비밀번호에 사번 포함 불가</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="activeForm_btnwrap">
+                            <input type="submit" class="activeForm_confirm" value="확인" />
+                            <button class="activeForm_cancle">닫기</button>
+                        </div>
+                    </form>
+
+                    <!-- 계정등록의 비밀번호설정 또는 비밀번호 재설정 -->
+                    <form action="" id="form_change_pw" class="activeForm">
+                        <div class="activeForm_group">
+                            <div class="activeForm_title activeForm_id"><label for="member_id">직번</label></div>
+                            <div class="activeForm_area">
+                                <div class="activeForm_box">
+                                    <div class="activeForm_unit">
+                                        <input type="text" uid="member_id" class="activeForm_text" value="01234"
+                                            title="직번" disabled autofocus>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="activeForm_group">
+                            <div class="activeForm_title activeForm_pw"><label for="member_pw">비밀번호</label></div>
+                            <div class="activeForm_area">
+                                <div class="activeForm_box">
+                                    <div class="activeForm_unit">
+                                        <input type="password" uid="member_pw" class="activeForm_text"
+                                            placeholder="비밀번호 입력" title="비밀번호" autofocus>
+                                    </div>
+                                </div>
+                                <div class="activeForm_guide">
+                                    <span class="warning">비밀번호에 연속된 문자 또는 숫자를 입력할 수 없습니다.</span>
+                                    <span class="warning">비밀번호에 아이디는 입력할 수 없습니다.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="activeForm_group">
+                            <div class="activeForm_title activeForm_pw"><label for="member_pw">비밀번호 확인</label></div>
+                            <div class="activeForm_area">
+                                <div class="activeForm_box">
+                                    <div class="activeForm_unit">
+                                        <input type="password" uid="member_pw" class="activeForm_text"
+                                            placeholder="비밀번호 입력" title="비밀번호 확인">
+                                    </div>
+                                </div>
+                                <div class="activeForm_guide">
+                                    <span class="error">일치하지 않습니다.</span>
+                                </div>
+                                <div class="activeForm_info">
+                                    <p><i>&#42;</i> 영문(대/소문자 구분), 숫자, 특수문자를 조합하여 9~20자리 입력</p>
+                                    <p><i>&#42;</i> 연속된 문자 또는 숫자 입력 불가(ex 123, abc)</p>
+                                    <p><i>&#42;</i> 비밀번호에 사번 포함 불가</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="activeForm_btnwrap">
+                            <input type="submit" class="activeForm_confirm" value="확인" />
+                            <button class="activeForm_cancle">닫기</button>
+                        </div>
+                    </form>
+
+                    <!-- 비밀번호 변경 -->
+                    <form action="" id="form_change_pw" class="activeForm">
+                        <div class="activeForm_group">
+                            <div class="activeForm_title activeForm_id"><label for="member_id">직번</label></div>
+                            <div class="activeForm_area">
+                                <div class="activeForm_box">
+                                    <div class="activeForm_unit">
+                                        <input type="text" uid="member_id" class="activeForm_text"
+                                            placeholder="직번 5자리 입력" title="직번" autofocus />
+                                    </div>
+                                </div>
+                                <div class="activeForm_guide">
+                                    <span class="warning">직번 5자리를 입력해주세요.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="activeForm_group">
+                            <div class="activeForm_title activeForm_pw"><label for="member_pw">현재 비밀번호</label></div>
+                            <div class="activeForm_area">
+                                <div class="activeForm_box">
+                                    <div class="activeForm_unit">
+                                        <input type="password" uid="member_pw" class="activeForm_text"
+                                            placeholder="비밀번호 입력" title="비밀번호">
+                                    </div>
+                                </div>
+                                <div class="activeForm_guide">
+                                    <span class="error">비밀번호가 올바르지 않습니다.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="activeForm_group">
+                            <div class="activeForm_title activeForm_pw"><label for="member_change_pw1">변경 비밀번호</label>
+                            </div>
+                            <div class="activeForm_area">
+                                <div class="activeForm_box">
+                                    <div class="activeForm_unit">
+                                        <input type="password" uid="member_change_pw1" class="activeForm_text"
+                                            placeholder="비밀번호 입력" title="변경 비밀번호">
+                                    </div>
+                                </div>
+                                <div class="activeForm_guide">
+                                    <span class="warning">비밀번호에 연속된 문자 또는 숫자를 입력할 수 없습니다.</span>
+                                    <span class="warning">비밀번호에 아이디는 입력할 수 없습니다.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="activeForm_group">
+                            <div class="activeForm_title activeForm_pw"><label for="member_change_pw2">비밀번호 확인</label>
+                            </div>
+                            <div class="activeForm_area">
+                                <div class="activeForm_box">
+                                    <div class="activeForm_unit">
+                                        <input type="password" uid="member_change_pw2" class="activeForm_text"
+                                            placeholder="비밀번호 입력" title="변경 비밀번호 확인">
+                                    </div>
+                                </div>
+                                <div class="activeForm_guide">
+                                    <span class="error">일치하지 않습니다.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="activeForm_btnwrap">
+                            <input type="submit" class="activeForm_confirm" value="확인" />
+                            <button class="activeForm_cancle">닫기</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <a href="javascript:;" class="activeForm_close" title="창닫기"><span></span></a>
+        </div>
+    </div>
+    <div id="layer_shadow"></div>
+</body>
+
+</html>

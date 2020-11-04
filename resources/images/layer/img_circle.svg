@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" class="circle_part" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="80px"
+                                    height="80px" viewBox="0 0 80 80" enable-background="new 0 0 80 80"
+                                    xml:space="preserve">
+    <style type="text/css">
+        .circle_unit {
+            stroke-dasharray: 200.73715209960938;
+            stroke-dashoffset: 200.73715209960938;
+            stroke-linecap: round;
+            stroke-opacity: 0;
+            -webkit-animation: dash 600s linear forwards;
+            animation: dash 600s linear forwards;
+        }
+        @keyframes dash {
+            0% {
+                stroke-opacity: 1;
+                stroke-dashoffset: 200.73715209960938;
+            }
+            100% {
+                stroke-opacity: 1;
+                stroke-dashoffset: 0;
+            }
+        }
+    </style>
+    <circle class="circle_unit" fill="rgba(0,0,0,0)" stroke="#0686c6" stroke-width="4"
+                                        stroke-miterlimit="10" cx="40" cy="40" r="32" />
+</svg>
